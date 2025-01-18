@@ -58,9 +58,9 @@ const CitySelector = () => {
 
   return (
     <div>
+      <h1>Select Location</h1>
       <div>
-        <label htmlFor="country">Select Country: </label>
-        <select id="country" value={selectedCountry} onChange={handleCountryChange}>
+        <select value={selectedCountry} onChange={handleCountryChange}>
           <option value="">Select Country</option>
           {countries.map((country) => (
             <option key={country} value={country}>
@@ -72,8 +72,7 @@ const CitySelector = () => {
 
       {selectedCountry && (
         <div>
-          <label htmlFor="state">Select State: </label>
-          <select id="state" value={selectedState} onChange={handleStateChange}>
+          <select value={selectedState} onChange={handleStateChange}>
             <option value="">Select State</option>
             {states.map((state) => (
               <option key={state} value={state}>
@@ -86,8 +85,7 @@ const CitySelector = () => {
 
       {selectedState && (
         <div>
-          <label htmlFor="city">Select City: </label>
-          <select id="city" value={selectedCity} onChange={handleCityChange}>
+          <select value={selectedCity} onChange={handleCityChange}>
             <option value="">Select City</option>
             {cities.map((city) => (
               <option key={city} value={city}>
@@ -99,10 +97,7 @@ const CitySelector = () => {
       )}
 
       <div>
-        <h2>Selected Location:</h2>
-        <p>Country: {selectedCountry}</p>
-        <p>State: {selectedState}</p>
-        <p>City: {selectedCity}</p>
+        <h2>You selected {selectedCity}, {selectedState}, {selectedCountry}</h2>
       </div>
     </div>
   );
